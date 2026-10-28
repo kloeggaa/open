@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Open in Obsidian</title>
+</head>
+<body>
+<p><a id="open" href="#">Open in Obsidian</a></p>
+<script>
+const u = new URLSearchParams(location.search).get("u");
+const a = document.getElementById("open");
+if (u && u.startsWith("obsidian://")) {
+  a.href = u;
+  location.href = u;
+} else {
+  a.textContent = "Invalid link";
+  a.removeAttribute("href");
+}
+</script>
+</body>
+</html>
